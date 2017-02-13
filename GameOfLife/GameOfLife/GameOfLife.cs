@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using System.Timers;
 
 namespace GameOfLife
@@ -13,13 +7,19 @@ namespace GameOfLife
     class GameOfLife
     {
         private int[,] board = new int[20, 20];
-
+        private Oscillators oscillator;
         public enum Oscillators
 
         {
             Default = 0, Blinker = 1, Toad = 2, Beacon = 3, Pulsar = 4, Pentadeclathon = 5
         }
         public GameOfLife(Oscillators oscillator = Oscillators.Default)
+        {
+            this.oscillator = oscillator;
+            InitBoard();
+        }
+
+        private void InitBoard()
         {
             switch (oscillator)
             {
@@ -55,9 +55,7 @@ namespace GameOfLife
                     }
 
             }
-            PrintBoard();
         }
-
 
         private void RandomSeedBoard()
         {
