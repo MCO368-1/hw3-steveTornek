@@ -123,7 +123,7 @@ namespace GameOfLife
             return 1;
         }
 
-        public void PrintBoard()
+        private void PrintBoard()
         {
             for (int i = 0; i < board.GetLength(0); i++)
             {
