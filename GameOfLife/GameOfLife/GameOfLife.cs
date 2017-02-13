@@ -127,8 +127,8 @@ namespace GameOfLife
             {
                 for (int j = 0; j < board.GetLength(1); j++)
                 {
-                    var foo = board[i, j] == 1 ? "\u25A0" : "\u25A1";
-                    Console.Write("|_" + foo + "_|");
+                    var cellOutput = board[i, j] == 1 ? "\u25A0" : "\u25A1";
+                    Console.Write("|_" + cellOutput + "_|");
                 }
                 Console.WriteLine("");
 
